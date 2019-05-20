@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+    <style>
+
+        #label_div{
+            margin-top: 300px;
+            margin-left: 400px;
+            background-color: cadetblue;
+            padding: 0;
+            width: 40px;
+            height: 22hpx;
+        }
+      
+        
+        
+        
+        
+        #label_status{
+            border: black solid 1px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="label_div">
+<label id="label_status">Status</label>
+    <br>
+<label id="label_click"></label>
+ </div>
+
+<script>
+       $(window).ready(function(){
+                $(window).click(function(){
+
+                    $("#label_click").html("click");
+
+
+                });
+
+
+                $(window).keydown(function(event){
+
+                    $("#label_click").html(String.fromCharCode(event.which) + " " +event.which) ;
+                });
+
+                /*
+                    keyup()
+                    keypress()
+                */
+                $("#label_status").hover(function(){
+                   $("#label_click").text(" ");
+                });
+           
+           
+                $("#label_click").empty(function(){
+                   $("#label_status").css("background-color", "black");
+                });
+           });
+</script>
+
+</body>
+</html>
